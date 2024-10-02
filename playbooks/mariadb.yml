@@ -19,7 +19,7 @@
         permanent: yes
         state: enabled
         immediate: yes
-    - name: MariaDB yum repository
+    - name: MariaDB yum repository ofr RHEl7
       yum_repository:
         name: MariaDB
         description: MariaDB
