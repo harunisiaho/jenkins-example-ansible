@@ -2,6 +2,11 @@
   hosts: mariadbs
   become: yes
   tasks:
+    - name: Install firewalld
+      ansible.builtin.dnf:
+        name:
+          - firewalld
+        state: latest 
     - name: enable and start firewalld service
       systemd:
         name: firewalld
@@ -19,18 +24,10 @@
         permanent: yes
         state: enabled
         immediate: yes
-    - name: MariaDB yum repository ofr RHEl7
-      yum_repository:
-        name: MariaDB
-        description: MariaDB
-        baseurl: http://yum.mariadb.org/10.6.2/centos$releasever-amd64
-        enabled: yes
-        gpgcheck: yes
-        gpgkey: https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
     - name: Install MariaDB server
-      yum:
+      ansible.builtin.dnf:
         name:
-          - MariaDB-server
+          - mariadb-server
         state: latest
     - name: start MariaDB service
       systemd:
