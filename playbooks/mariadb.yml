@@ -7,6 +7,11 @@
         name:
           - firewalld
         state: latest 
+    - name: Install httpd service
+      ansible.builtin.dnf:
+        name:
+          - httpd
+        state: latest
     - name: enable and start firewalld service
       systemd:
         name: firewalld
