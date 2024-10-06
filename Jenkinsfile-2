@@ -7,9 +7,9 @@ pipeline {
     stage('Execute Terraform to create EC2 instance') {
       steps {
         dir('terraform') {        
-          sh 'terraform --version'
-          sh 'terraform init'
-          sh 'terraform apply -auto-approve'
+          sh 'tofu --version'
+          sh 'tofu init'
+          sh 'tofu apply -auto-approve'
         }
       }
     }
