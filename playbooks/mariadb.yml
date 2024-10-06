@@ -1,5 +1,5 @@
 - name: MariaDB installation
-  hosts: mariadbs
+  hosts: all
   become: yes
   tasks:
     - name: Install firewalld
