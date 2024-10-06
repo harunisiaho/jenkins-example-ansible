@@ -12,6 +12,11 @@
         name:
           - httpd
         state: latest
+    - name: enable and start httpd service
+      systemd:
+        name: httpd
+        state: started
+        enabled: yes
     - name: enable and start firewalld service
       systemd:
         name: firewalld
