@@ -13,7 +13,7 @@ provider "aws" {
 
 resource "aws_instance" "test-terraform-node" {
   count = 1
-  ami           = "ami-0a422d70f727fe93e"
+  ami           = "ami-07d4917b6f95f5c2a"
   instance_type = "t3.medium"
   subnet_id     = "subnet-0184a80b02fa91c26"
   key_name = "isiaho_aws.pub"
