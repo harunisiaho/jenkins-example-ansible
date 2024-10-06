@@ -8,3 +8,4 @@ filters:
 compose:
   ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
   ansible_host: private_ip_address
+  ansible_user: ec2-user
