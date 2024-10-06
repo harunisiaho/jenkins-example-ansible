@@ -5,13 +5,13 @@ pipeline {
   }
   stages {
     stage('Execute Terraform to create EC2 instance') {
-      dir('terraform') {        
       steps {
-        sh 'terraform --version'
-        sh 'terraform init'
-        sh 'terraform apply -auto-approve'
+        dir('terraform') {        
+          sh 'terraform --version'
+          sh 'terraform init'
+          sh 'terraform apply -auto-approve'
+        }
       }
-    }
     }
     stage('Setup Mariadb') {
       steps {
