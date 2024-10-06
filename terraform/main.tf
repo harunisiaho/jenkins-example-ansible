@@ -20,7 +20,7 @@ resource "aws_instance" "test-terraform-node" {
   iam_instance_profile = "AmazonSSMRoleForInstancesQuickSetup"
   vpc_security_group_ids = ["sg-06f32a670b31a255b"]
   tags = {
-    Name = "Jenkins-Controller-01"
+    Name = "test-terraform-node"
     auto-delete = "no"
     "awssupport:patchwork" = "patch"
   }
