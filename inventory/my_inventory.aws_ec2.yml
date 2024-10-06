@@ -1,6 +1,9 @@
+---
 plugin: amazon.aws.aws_ec2
 regions:
   - eu-west-1
 filters:
   tag:Name:
     - test-terraform-node
+compose:
+  ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
