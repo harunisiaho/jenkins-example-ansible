@@ -8,11 +8,12 @@
     #     host: '{{ (ansible_ssh_host|default(ansible_host))|default(inventory_hostname) }}'
     #     search_regex: OpenSSH
     #     delay: 10
-    # - name: Wait 300 seconds, but only start checking after 60 seconds
-    #   ansible.builtin.wait_for_connection:
-    #     delay: 10
-    #     timeout: 30
-    # connection: local
+    - name: Wait 300 seconds, but only start checking after 60 seconds
+      ansible.builtin.wait_for_connection:
+        delay: 10
+        sleep: 5
+        timeout: 120
+      connection: local
     - name: Install firewalld
       ansible.builtin.dnf:
         name:
