@@ -12,7 +12,7 @@
     #   ansible.builtin.wait_for_connection:
     #     delay: 10
     #     timeout: 30
-      connection: local
+    # connection: local
     - name: Install firewalld
       ansible.builtin.dnf:
         name:
